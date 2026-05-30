@@ -1,0 +1,129 @@
+{
+  "evidence_bundle_profile_version": "0.1",
+  "profile_id": "omb-m24-10-readiness-v0.1",
+  "title": "OMB M-24-10 Readiness Evidence Bundle",
+  "purpose": "Profile of the Evidence Bundle spec scoped to evidence a federal agency's program toward OMB Memorandum M-24-10 (March 2024) 'Advancing Governance, Innovation, and Risk Management for Agency Use of Artificial Intelligence', the AI Bill of Rights blueprint (OSTP Oct 2022), Section 508 of the Rehabilitation Act, the Privacy Act of 1974, FOIA, NIST AI RMF 1.0 + the Generative AI Profile, OMB M-24-18 (AI procurement), and the residual obligations carried forward from EO 14110 + state-government-AI statutes. NOT compliance attestation.",
+  "applies_to": [
+    "federal-executive-agency",
+    "federal-independent-agency",
+    "federal-contractor-providing-ai-to-government",
+    "state-executive-agency-applying-federal-frameworks",
+    "local-government-agency-applying-federal-frameworks"
+  ],
+  "obligation_families": [
+    {
+      "code": "ai-governance",
+      "title": "Agency AI Governance",
+      "citation": "OMB M-24-10 §2 + agency AI strategy + AI policy officer designation",
+      "summary": "Designated agency AI policy officer, agency AI strategy publication, agency AI governance committee, agency AI risk register.",
+      "required_evidence_kinds": [
+        "agency-ai-policy-officer-designation",
+        "agency-ai-strategy-document",
+        "agency-ai-governance-committee-charter",
+        "agency-ai-risk-register"
+      ]
+    },
+    {
+      "code": "federal-ai-use-case-inventory",
+      "title": "Federal AI Use Case Inventory",
+      "citation": "OMB M-24-10 §3(a) + EO 14110 (carried forward via M-24-10)",
+      "summary": "Federal AI Use Case Inventory publication on ai.gov; per-use-case entry covering name, description, purpose, status, OMB-classifications (safety/rights-impacting), data sources, AI Tool Card URL.",
+      "required_evidence_kinds": [
+        "federal-ai-use-case-inventory-snapshot",
+        "per-use-case-entry-with-tool-card-link",
+        "annual-inventory-update-attestation"
+      ]
+    },
+    {
+      "code": "rights-impacting-ai-minimum-practices",
+      "title": "Rights-Impacting AI Minimum Practices",
+      "citation": "OMB M-24-10 §5(d)",
+      "summary": "For AI systems that materially impact individuals' rights: pre-deployment impact assessment, ongoing monitoring, identified human-review pathway, consumer notice, accessibility, opt-out where feasible.",
+      "required_evidence_kinds": [
+        "rights-impacting-pre-deployment-impact-assessment",
+        "rights-impacting-ongoing-monitoring-report",
+        "rights-impacting-human-review-pathway-documentation",
+        "rights-impacting-consumer-notice-template",
+        "rights-impacting-opt-out-pathway-documentation"
+      ]
+    },
+    {
+      "code": "safety-impacting-ai-minimum-practices",
+      "title": "Safety-Impacting AI Minimum Practices",
+      "citation": "OMB M-24-10 §5(c)",
+      "summary": "For AI systems that materially impact safety: pre-deployment safety evaluation, real-world testing, ongoing safety monitoring, identified safety officer.",
+      "required_evidence_kinds": [
+        "safety-impacting-pre-deployment-safety-evaluation",
+        "safety-impacting-real-world-testing-report",
+        "safety-impacting-ongoing-safety-monitoring-report",
+        "safety-impacting-safety-officer-designation"
+      ]
+    },
+    {
+      "code": "ai-procurement-omb-m24-18",
+      "title": "AI Procurement",
+      "citation": "OMB M-24-18 (Advancing the Responsible Acquisition of AI in Government)",
+      "summary": "AI procurement contract clauses, vendor disclosure requirements, Federal Acquisition Regulation (FAR) AI references.",
+      "required_evidence_kinds": [
+        "ai-procurement-contract-clause-template",
+        "vendor-ai-disclosure-requirement",
+        "far-ai-reference-attestation"
+      ]
+    },
+    {
+      "code": "accessibility-section-508",
+      "title": "Section 508 + WCAG Accessibility",
+      "citation": "Section 508 of the Rehabilitation Act + 36 CFR Part 1194 + WCAG 2.1 AA",
+      "summary": "AI tool output + agency-facing AI dashboards must conform to Section 508 + WCAG 2.1 AA.",
+      "required_evidence_kinds": [
+        "section-508-conformance-attestation",
+        "wcag-2-1-aa-audit-report",
+        "ai-output-accessibility-test-evidence"
+      ]
+    },
+    {
+      "code": "privacy-act-foia",
+      "title": "Privacy Act + FOIA",
+      "citation": "Privacy Act of 1974 (5 USC §552a) + FOIA (5 USC §552) + agency System of Records Notice",
+      "summary": "Privacy Act compliance with AI use; accounting of disclosures; AI-impact on FOIA processing.",
+      "required_evidence_kinds": [
+        "privacy-act-system-of-records-notice-for-ai-system",
+        "privacy-act-accounting-of-disclosures-extract",
+        "foia-processing-impact-assessment"
+      ]
+    },
+    {
+      "code": "nist-ai-rmf",
+      "title": "NIST AI RMF 1.0 Application",
+      "citation": "NIST AI 100-1 + NIST AI RMF GenAI Profile (2024)",
+      "summary": "Application of NIST AI RMF GOVERN / MAP / MEASURE / MANAGE functions, including the GenAI Profile additions.",
+      "required_evidence_kinds": [
+        "nist-ai-rmf-govern-function-attestation",
+        "nist-ai-rmf-map-function-output",
+        "nist-ai-rmf-measure-function-output",
+        "nist-ai-rmf-manage-function-output",
+        "nist-genai-profile-application-attestation"
+      ]
+    }
+  ],
+  "decision_document_requirements": {
+    "required_when_gap_present": true
+  },
+  "freshness_windows": {
+    "agency_strategy": "P365D",
+    "inventory_update": "P365D",
+    "rights_impacting_monitoring": "P90D",
+    "safety_impacting_monitoring": "P30D",
+    "wcag_audit": "P365D",
+    "nist_rmf_iteration": "P180D"
+  },
+  "audit_stream_emission_conventions": {
+    "bundle_published_event_kind": "omb_m24_10_readiness.bundle_published",
+    "gap_detected_event_kind": "omb_m24_10_readiness.gap_detected",
+    "remediation_committed_event_kind": "omb_m24_10_readiness.remediation_committed"
+  },
+  "signature": {
+    "required": true,
+    "algorithm": "ed25519"
+  }
+}

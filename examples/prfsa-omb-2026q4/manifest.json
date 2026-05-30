@@ -1,0 +1,48 @@
+{
+  "evidence_bundle_version": "0.1",
+  "bundle": {
+    "id": "prfsa-omb-2026q4",
+    "subject": "Pacific Region Federal Services Agency — 2026 Q4 OMB M-24-10 readiness package",
+    "purpose": "omb-m24-10-quarterly-self-review",
+    "created_at": "2026-12-15T16:00:00Z",
+    "creator": "ai-policy-officer@prfsa.example.gov",
+    "expires_at": "2027-12-15T00:00:00Z",
+    "labels": {
+      "profile": "omb-m24-10-readiness-v0.1",
+      "period": "2026-Q4",
+      "in-scope-ai-systems": ["VendorG GovDecide v3.x", "PRFSA internal chatbot v2.1"],
+      "agency-classification-level": "CUI"
+    }
+  },
+  "items": [
+    {"id": "ai-policy-officer-designation",     "path": "content/ai-policy-officer-designation-2026.pdf",   "media_type": "application/pdf",   "sha256": "0011001100110011001100110011001100110011001100110011001100110011", "size_bytes": 49152, "labels": {"control_family": "ai-governance", "control_spec": "agency-ai-policy-officer-designation"}},
+    {"id": "agency-ai-strategy-2026",            "path": "content/prfsa-ai-strategy-2026.pdf",                "media_type": "application/pdf",   "sha256": "0022002200220022002200220022002200220022002200220022002200220022", "size_bytes": 245760, "labels": {"control_family": "ai-governance", "control_spec": "agency-ai-strategy-document"}},
+    {"id": "ai-use-case-inventory-q4",            "path": "content/use-case-inventory-2026q4.json",            "media_type": "application/json",  "sha256": "0033003300330033003300330033003300330033003300330033003300330033", "size_bytes": 65536, "labels": {"control_family": "federal-ai-use-case-inventory", "control_spec": "federal-ai-use-case-inventory-snapshot"}},
+    {"id": "vendorg-impact-assessment",           "path": "content/vendorg-govdecide-impact-assessment.pdf",   "media_type": "application/pdf",   "sha256": "0044004400440044004400440044004400440044004400440044004400440044", "size_bytes": 614400, "labels": {"control_family": "rights-impacting-ai-minimum-practices", "control_spec": "rights-impacting-pre-deployment-impact-assessment", "in-scope-ai-system": "VendorG GovDecide v3.x"}},
+    {"id": "vendorg-monitoring-q4",                "path": "content/vendorg-govdecide-monitoring-2026q4.json",  "media_type": "application/json",  "sha256": "0055005500550055005500550055005500550055005500550055005500550055", "size_bytes": 81920, "labels": {"control_family": "rights-impacting-ai-minimum-practices", "control_spec": "rights-impacting-ongoing-monitoring-report", "in-scope-ai-system": "VendorG GovDecide v3.x"}},
+    {"id": "vendorg-human-review-pathway",        "path": "content/vendorg-human-review-pathway.pdf",          "media_type": "application/pdf",   "sha256": "0066006600660066006600660066006600660066006600660066006600660066", "size_bytes": 81920, "labels": {"control_family": "rights-impacting-ai-minimum-practices", "control_spec": "rights-impacting-human-review-pathway-documentation"}},
+    {"id": "vendorg-procurement-clause",           "path": "content/vendorg-master-agreement-ai-clause.pdf",    "media_type": "application/pdf",   "sha256": "0077007700770077007700770077007700770077007700770077007700770077", "size_bytes": 102400, "labels": {"control_family": "ai-procurement-omb-m24-18", "control_spec": "ai-procurement-contract-clause-template"}},
+    {"id": "section-508-attestation-q4",           "path": "content/section-508-conformance-2026q4.pdf",        "media_type": "application/pdf",   "sha256": "0088008800880088008800880088008800880088008800880088008800880088", "size_bytes": 81920, "labels": {"control_family": "accessibility-section-508", "control_spec": "section-508-conformance-attestation"}},
+    {"id": "wcag-aa-audit-2026",                   "path": "content/wcag-2-1-aa-audit-2026.pdf",                "media_type": "application/pdf",   "sha256": "0099009900990099009900990099009900990099009900990099009900990099", "size_bytes": 163840, "labels": {"control_family": "accessibility-section-508", "control_spec": "wcag-2-1-aa-audit-report"}},
+    {"id": "vendorg-sorn",                          "path": "content/vendorg-system-of-records-notice.pdf",      "media_type": "application/pdf",   "sha256": "00aa00aa00aa00aa00aa00aa00aa00aa00aa00aa00aa00aa00aa00aa00aa00aa", "size_bytes": 122880, "labels": {"control_family": "privacy-act-foia", "control_spec": "privacy-act-system-of-records-notice-for-ai-system"}},
+    {"id": "nist-rmf-govern-q4",                   "path": "content/nist-ai-rmf-govern-2026q4.pdf",             "media_type": "application/pdf",   "sha256": "00bb00bb00bb00bb00bb00bb00bb00bb00bb00bb00bb00bb00bb00bb00bb00bb", "size_bytes": 122880, "labels": {"control_family": "nist-ai-rmf", "control_spec": "nist-ai-rmf-govern-function-attestation"}},
+    {"id": "audit-stream-extract-q4",              "path": "content/audit-stream-extract-2026q4.ndjson",        "media_type": "application/x-ndjson","sha256": "00cc00cc00cc00cc00cc00cc00cc00cc00cc00cc00cc00cc00cc00cc00cc00cc", "size_bytes": 819200, "labels": {"control_family": "ai-governance", "control_spec": "audit-stream-extract"}}
+  ],
+  "relationships": [
+    {"from": "vendorg-impact-assessment", "kind": "evidences", "to": "agency-ai-strategy-2026"},
+    {"from": "vendorg-monitoring-q4",     "kind": "evidences", "to": "vendorg-impact-assessment"},
+    {"from": "audit-stream-extract-q4",   "kind": "evidences", "to": "vendorg-monitoring-q4"},
+    {"from": "ai-use-case-inventory-q4",  "kind": "summarizes","to": "vendorg-impact-assessment"}
+  ],
+  "signature": {
+    "algorithm": "ed25519",
+    "signer_key_uri": "https://prfsa.example.gov/.well-known/keys/omb-m24-10-readiness-signer.json#k-2026q4",
+    "signature_b64": "ILLUSTRATIVE_PLACEHOLDER_SIGNATURE_FOR_PROFILE_DOCUMENTATION_PURPOSES_ONLY"
+  },
+  "audit_stream_emission": {
+    "emitted_to": "https://prfsa.example.gov/.well-known/audit-stream/omb-m24-10-readiness/prfsa-omb-2026q4.json",
+    "events": [
+      {"kind": "omb_m24_10_readiness.bundle_published", "emitted_at": "2026-12-15T16:00:00Z"}
+    ]
+  }
+}
