@@ -1,5 +1,7 @@
 # omb-m24-10-readiness-evidence-bundle
 
+> **Historical draft, not current federal AI readiness guidance (reviewed 2026-10-30).** [OMB M-25-21](https://www.whitehouse.gov/wp-content/uploads/2025/02/M-25-21-Accelerating-Federal-Use-of-AI-through-Innovation-Governance-and-Public-Trust.pdf) expressly rescinded and replaced M-24-10, and [OMB M-25-22](https://www.whitehouse.gov/wp-content/uploads/2025/02/M-25-22-Driving-Efficient-Acquisition-of-Artificial-Intelligence-in-Government.pdf) expressly rescinded and replaced M-24-18 on April 3, 2025. This repository preserves a 2024-memorandum profile for historical comparison. Its `profile.json`, examples, cadence values, and referral language have **not** been remapped to the replacement memoranda. Do not use it to assert current federal readiness, required reporting, or conformance. Check the [OMB memoranda index](https://www.whitehouse.gov/omb/information-resources/guidance/memoranda/) for later changes.
+
 > **OMB M-24-10 Readiness Evidence Bundle v0.1 draft.** Profile of the [Evidence Bundle spec](https://github.com/mizcausevic-dev/evidence-bundle-spec) scoped to evidence a federal agency's program toward **OMB M-24-10** (March 2024) "Advancing Governance, Innovation, and Risk Management for Agency Use of Artificial Intelligence", plus the AI Bill of Rights blueprint, Section 508 + WCAG 2.1 AA, Privacy Act of 1974 + FOIA, NIST AI RMF 1.0 + GenAI Profile, OMB M-24-18 (AI procurement), and residual obligations carried forward from EO 14110 + state-government-AI statutes. Names 8 obligation families covering agency AI governance, the Federal AI Use Case Inventory, rights-impacting minimum practices, safety-impacting minimum practices, AI procurement, Section 508 accessibility, Privacy Act + FOIA, and NIST AI RMF application.
 
 Part of the [Kinetic Gain Protocol Suite](https://suite.kineticgain.com).
@@ -19,7 +21,7 @@ Part of the [Kinetic Gain Protocol Suite](https://suite.kineticgain.com).
 | **privacy-act-foia** | Privacy Act 5 USC §552a + FOIA 5 USC §552 | privacy-act-system-of-records-notice-for-ai-system · privacy-act-accounting-of-disclosures-extract · foia-processing-impact-assessment |
 | **nist-ai-rmf** | NIST AI 100-1 + GenAI Profile (2024) | nist-ai-rmf-govern-function-attestation · nist-ai-rmf-map-function-output · nist-ai-rmf-measure-function-output · nist-ai-rmf-manage-function-output · nist-genai-profile-application-attestation |
 
-## Freshness windows
+## Historical profile cadence examples
 
 | Family | Window |
 | --- | --- |
@@ -30,7 +32,7 @@ Part of the [Kinetic Gain Protocol Suite](https://suite.kineticgain.com).
 | wcag_audit | P365D |
 | nist_rmf_iteration | P180D |
 
-## Canonical example
+## Historical synthetic example
 
 [`examples/prfsa-omb-2026q4/`](./examples/prfsa-omb-2026q4/) — Pacific Region Federal Services Agency 2026 Q4 OMB M-24-10 readiness bundle covering two in-scope AI systems (VendorG GovDecide v3.x + PRFSA internal chatbot v2.1), 12 evidence items across the eight families.
 
@@ -43,9 +45,9 @@ Part of the [Kinetic Gain Protocol Suite](https://suite.kineticgain.com).
 | [`state-government-ai-disclosure-tracker`](https://github.com/mizcausevic-dev/state-government-ai-disclosure-tracker) | Identifies which federal + state overlays apply |
 | Sibling readiness bundles (hipaa / ferpa / respa / naic / eeoc / cfpb) across the 6 prior verticals | Same architecture, different per-vertical regulatory anchors |
 
-## Compliance posture
+## Historical posture
 
-GovTech-readiness scaffolding for OMB M-24-10 + OMB M-24-18 + AI Bill of Rights + Section 508 + Privacy Act + FOIA + NIST AI RMF readiness. Supports a federal agency's program toward those expectations but does not by itself establish compliance. The Federal AI Use Case Inventory listing is a separate agency publication process. Per the standing public-language guardrail: *readiness · evidence · posture · controls · scaffolding* — never "OMB-M-24-10-compliant" or "AI-Bill-of-Rights-attested" without an external attestation.
+This draft shows how the 2024 OMB M-24-10 and M-24-18 text was mapped into evidence-bundle fields. It does not support a present-day federal AI readiness or compliance claim. A replacement profile requires a field-by-field review against M-25-21 and M-25-22 and verification of other applicable sources. The Federal AI Use Case Inventory listing is a separate agency publication process. Per the standing public-language guardrail: *readiness · evidence · posture · controls · scaffolding* — never "OMB-M-24-10-compliant" or "AI-Bill-of-Rights-attested" without an external attestation.
 
 ## License
 
